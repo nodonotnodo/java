@@ -1,4 +1,4 @@
-import java.util.Scanner;
+	import java.util.Scanner;
 
 public class Practice{
 	// 请手写如下所示格式的个人信息 Java 代码：
