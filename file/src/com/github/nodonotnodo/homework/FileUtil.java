@@ -1,9 +1,12 @@
 package com.github.nodonotnodo.homework;
 
-import java.io.File;
+import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
+
+import java.io.*;
 import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Date;
 
 /**
@@ -17,14 +20,44 @@ public final class FileUtil {
     
     private FileUtil() {
     }
-    
+
+    //检查文件是否存在,存在返回true,不存在返回false
+    public static boolean checkExists(File file){
+        if(!file.exists()){
+            System.out.println("文件不存在，请输入正确的文件名称");
+            return false;
+        }
+        return true;
+    }
+
+    //检查文件是否是目录，不是返回false,不是在返回true
+    public static boolean cheakDir(File file){
+        if(!file.isDirectory()){
+            System.out.println("请输入一个目录名");
+            return false;
+        }
+        return true;
+    }
+
+    //检查文件是否是目录，不是返回false,不是在返回true
+    public static boolean checkFile(File file){
+        if(!file.isDirectory()){
+            System.out.println("请输入一个文件名");
+            return false;
+        }
+        return true;
+    }
+
     /**
      * 是否为Windows环境
      *
      * @return 是否为Windows环境
      */
     public static boolean isWindows() {
-        //TODO
+        char c = File.separatorChar;
+        if('\\' == c){
+            return true;
+        }
         return false;
     }
     
@@ -36,7 +69,18 @@ public final class FileUtil {
      * @return 文件列表（包含目录）
      */
     public static File[] ls(String path) {
-        //TODO
+        File file = Paths.get(path).toFile();
+        if((!checkExists(file)) || (!cheakDir(file))){
+            return null;
+        }
+        String[] str = file.list();
+        if(str != null){
+            System.out.println("要查看内容的目录："+path);
+            for(String v:str){
+                System.out.printf("%-30s",v);
+            }
+            System.out.println();
+        }
         return null;
     }
     
@@ -46,8 +90,14 @@ public final class FileUtil {
      * @param dirPath 目录
      * @return 是否为空
      */
-    public static boolean isDirEmpty(Path dirPath) {
-        //TODO
+    public static boolean isDirEmpty(Path dirPath) throws Exception {
+        File file = dirPath.toFile();
+        if((!checkExists(file)) || (!cheakDir(file))){
+            throw new Exception();
+        }
+        if(null == file.list()) {
+            return true;
+        }
         return false;
     }
     
@@ -57,9 +107,11 @@ public final class FileUtil {
      * @param file 文件
      * @return 绝对路径
      */
-    public static String getAbsolutePath(File file) {
-        //TODO
-        return null;
+    public static String getAbsolutePath(File file) throws Exception {
+        if((!checkExists(file)) || (!checkFile(file))){
+            throw new Exception();
+        }
+        return file.getAbsolutePath();
     }
     
     /**
@@ -69,9 +121,12 @@ public final class FileUtil {
      * @param path 需要检查的Path
      * @return 是否已经是绝对路径
      */
-    public static boolean isAbsolutePath(String path) {
-        //TODO
-        return false;
+    public static boolean isAbsolutePath(String path) throws Exception {
+        File file = Paths.get(path).toFile();
+        if(!checkExists(file)){
+            throw new Exception();
+        }
+        return file.isAbsolute();
     }
     
     
@@ -91,8 +146,8 @@ public final class FileUtil {
      * @return 用户路径
      */
     public static String getUserHomePath() {
-        //TODO
-        return null;
+        File file = Paths.get("").toFile();
+        return file.getAbsolutePath();
     }
     
     /**
@@ -102,7 +157,9 @@ public final class FileUtil {
      * @return 如果存在返回true
      */
     public static boolean exist(File file) {
-        //TODO
+        if(null != file && file.exists()){
+            return true;
+        }
         return false;
     }
     
@@ -125,9 +182,11 @@ public final class FileUtil {
      * @param file 文件
      * @return 最后修改时间
      */
-    public static Date lastModifiedTime(File file) {
-        //TODO
-        return null;
+    public static Date lastModifiedTime(File file) throws Exception {
+        if(file == null || (!file.exists())){
+            throw new Exception();
+        }
+        return new Date(file.lastModified());
     }
     
     
@@ -140,8 +199,18 @@ public final class FileUtil {
      * @return 总大小，bytes长度
      */
     public static long size(File file) {
-        //TODO
-        return -1;
+        if(file == null){
+            return 0L;
+        }
+        if(file.isFile()){
+            return file.length();
+        }
+        long result = 0;
+        File[] files = file.listFiles();
+        for(File f:files){
+            result += (size(f));
+        }
+        return result;
     }
     
     /**
@@ -151,9 +220,13 @@ public final class FileUtil {
      * @param reference 参照文件
      * @return 是否晚于给定时间
      */
-    public static boolean newerThan(File file, File reference) {
-        //TODO
-        return false;
+    public static boolean newerThan(File file, File reference) throws Exception {
+        if(file == null || reference == null || (!file.exists()) || (!reference.exists())){
+            throw new Exception();
+        }
+        Date fdate = new Date(file.lastModified());
+        Date fedate = new Date(reference.lastModified());
+        return fdate.after(fedate);
     }
     
     /**
@@ -163,9 +236,13 @@ public final class FileUtil {
      * @param timeMillis 做为对比的时间
      * @return 是否晚于给定时间
      */
-    public static boolean newerThan(File file, long timeMillis) {
-        //TODO
-        return false;
+    public static boolean newerThan(File file, long timeMillis) throws Exception {
+        if(file == null || (!file.exists())){
+            throw new Exception();
+        }
+        Date fdate = new Date(file.lastModified());
+        Date tmDate = new Date(timeMillis);
+        return fdate.after(tmDate);
     }
     
     /**
@@ -174,9 +251,13 @@ public final class FileUtil {
      * @param file 文件或目录
      * @return 父目录
      */
-    public static File mkParentDirs(File file) {
-        //TODO
-        return null;
+    public static File mkParentDirs(File file) throws Exception {
+        if(file == null){
+            throw new Exception();
+        }
+        File pafile = file.getParentFile();
+        pafile.mkdirs();
+        return pafile;
     }
     
     /**
@@ -186,9 +267,17 @@ public final class FileUtil {
      * @param file 文件对象
      * @return 文件，若路径为null，返回null
      */
-    public static File touch(File file) {
-        //TODO
-        return null;
+    public static File touch(File file) throws Exception {
+        if(file == null) {
+            throw new Exception();
+        }
+        if(file.exists()){
+            return file;
+        }else{
+             file.getParentFile().mkdirs();
+             file.createNewFile();
+             return null;
+        }
     }
     
     
@@ -200,9 +289,24 @@ public final class FileUtil {
      * @param file 文件对象
      * @return 成功与否
      */
-    public static boolean del(File file) {
-        //TODO
-        return false;
+    public static boolean del(File file) throws Exception {
+        if(file == null){
+            throw new Exception();
+        }
+        if(file.isFile()) {
+            file.delete();
+            return true;
+        }
+        if(file.isDirectory()){
+            File[] wdel = file.listFiles();
+            for(File v:wdel){
+                if(!del(v)){
+                    return false;
+                }
+            }
+            file.delete();
+        }
+        return true;
     }
     
     /**
@@ -213,9 +317,17 @@ public final class FileUtil {
      * @param directory 文件夹
      * @return 成功与否
      */
-    public static boolean clean(File directory) {
-        //TODO
-        return false;
+    public static boolean clean(File directory) throws Exception {
+        if(directory == null || (!directory.isDirectory())){
+            throw new Exception();
+        }
+        File[] wdel = directory.listFiles();
+        for(File v:wdel){
+            if(!del(v)){
+                return false;
+            }
+        }
+        return true;
     }
     
     /**
@@ -359,5 +471,89 @@ public final class FileUtil {
         //TODO
         return null;
     }
-    
+
+    public static void main(String[] args) throws Exception {
+
+        //判断当前系统是否为Windows
+        System.out.println("当前系统是否是Windows系统："+isWindows());
+
+        //打印目录下内容信息
+        ls("F:\\比特\\39班学习\\java");
+        ls("F:\\比特\\39班学习\\jav");
+        ls("F:\\比特\\39班学习\\java\\java练习文件夹\\practice2");
+
+        //判断一个文件夹是否为空
+        File file = Paths.get("F:\\比特\\39班学习\\java").toFile();
+        System.out.println(file.toString()+"目录是否是一个空目录："+isDirEmpty(file.toPath()));
+
+        //获取一个文件的绝对路径
+        System.out.println(file.toString()+"的绝对路径为："+getAbsolutePath(file));
+
+        //判断一个File类对象是否是绝对目录
+        System.out.println(".是否是绝对目录："+isAbsolutePath("."));
+        System.out.println("F:\\比特\\39班学习\\java是否是绝对目录："+isAbsolutePath("F:\\比特\\39班学习\\java"));
+        //System.out.println("F:\\比特\\39班学习\\jav是否是绝对目录："+isAbsolutePath("F:\\比特\\39班学习\\jav"));
+
+
+        //获取用户当前路径
+        System.out.println("当前路径："+getUserHomePath());
+
+        //判断文件是否存在，如果file为null，则返回false
+        file = Paths.get("F:\\比特\\39班学习\\java").toFile();
+        System.out.println(file.toString()+"文件是否存在:"+exist(file));
+        file = Paths.get("F:\\比特\\39班学习\\jav").toFile();
+        System.out.println(file.toString()+"文件是否存在:"+exist(file));
+
+        //返回指定文件的最后修改时间
+        file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\practice2").toFile();
+        System.out.println(file.toString()+"文件的最后修改时间为："+lastModifiedTime(file));
+        try(
+                OutputStream out = new FileOutputStream(file,true);
+                ){
+            String str = "这是为了测试修改时间所修改的内容";
+            byte[] bs = str.getBytes();
+            out.write(bs);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        System.out.println(file.toString()+"文件的最后修改时间为："+lastModifiedTime(file));
+
+        //计算目录或文件的总大小
+        System.out.println(size(null));
+        file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\practice2").toFile();
+        System.out.println(file.toString()+"-文件的总大小为："+size(file));
+        file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹").toFile();
+        System.out.println(file.toString()+"-文件的总大小为："+size(file));
+
+        //给定文件或目录的最后修改时间是否晚于给定文件最后修改时间
+        File refile = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\practice2").toFile();
+        System.out.println(refile.toString()+"-文件的最后修改时间："+new Date(refile.lastModified()));
+        System.out.println(file.toString()+"-文件的最后修改时间："+new Date(file.lastModified()));
+        System.out.println(file.toString()+"-文件的最后修改时间是否晚于-"+refile.toString()+"-文件："+newerThan(file,refile));
+        System.out.println(refile.toString()+"-文件的最后修改时间是否晚于-"+file.toString()+"-文件："+newerThan(refile,file));
+
+        //给定文件或目录的最后修改时间是否晚于给定文件最后修改时间
+        System.out.println(newerThan(file,refile.lastModified()));
+        System.out.println(newerThan(refile,file.lastModified()));
+
+        //创建所给文件或目录的父目录
+        file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(3)\\practice2_F").toFile();
+        System.out.println(mkParentDirs(file));
+
+        //创建文件及其父目录
+        file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(4)\\practice2_F").toFile();
+        System.out.println(touch(file));
+
+        //删除文件或者文件夹
+        file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(4)\\practice2_F").toFile();
+        System.out.println(del(file));
+        System.out.println(touch(file));
+        //file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(4)").toFile();
+        //System.out.println(del(file));
+
+        //清空文件夹
+        file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(4)").toFile();
+        System.out.println(clean(file));
+    }
+
 }

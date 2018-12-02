@@ -1,9 +1,7 @@
 package com.github.nodonotnodo.practice;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.Date;
 
@@ -103,12 +101,71 @@ public class Practice2 {
         file1.renameTo(file2);
     }
 
-    public static void main(String[] args){
+    //字节输入流 InputStream 和 FileInputStream
+    public static void code6(){
+        File file1 = Paths.get("F:","比特","39班学习","java","java练习文件夹","practice2").toFile();
+        InputStream in = null;
+        try{
+            try {
+                in = new FileInputStream(file1);
+                int leng = -1;
+                //byte[] buffer = new byte[4];
+                //缓冲区设定为4个字节时，打印结果为：一�����单的�����文件
+
+                byte[] buffer = new byte[3];
+                //缓冲区设定为4个字节时，打印结果为：一个简单的实验文件
+                //可见在Java中一个汉字是占三个字节的。
+                while((leng = in.read(buffer)) != -1){
+                    System.out.print(new String(buffer,0,leng));
+                }
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+        } finally{
+            try {
+                in.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    //输出字节流及文件内容的修改和添加
+    public static void code7(){
+        File file1 = Paths.get("F:","比特","39班学习","java","java练习文件夹","practice2").toFile();
+        OutputStream out = null;
+        try{
+            out = new FileOutputStream(file1);
+            //在实例化一个FileOutputStream类的对象时，有一个构造方法参数为(File file,boolean append)
+            //若赋值输入的append为true,则在写入文件时则会在原有文件上添加。
+
+            String str = "这是一个新的文件内容";
+            byte[] buffer = str.getBytes();
+            out.write(buffer);
+            //此时practice2文件已经被修改为新的内容，并且原来的内容已经被删除。
+
+            out = new FileOutputStream(file1,true);
+            str = "这是要在原文件内容后面添加的内容";
+            buffer = str.getBytes();
+            out.write(buffer);
+            //此时文件内容为：这是一个新的文件内容这是要在原文件内容后面添加的内容
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
         //code1();
         //code2();
         //code3();
         //code4();
-
+        code7();
     }
 
 }
