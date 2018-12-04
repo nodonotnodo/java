@@ -5,6 +5,8 @@ import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader
 import java.io.*;
 import java.nio.file.*;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 文件处理工具
@@ -13,8 +15,8 @@ import java.util.Date;
  * Created: 2018/10/13
  */
 public final class FileUtil {
-    
-    
+
+
     private FileUtil() {
     }
 
@@ -133,8 +135,7 @@ public final class FileUtil {
      * @return 临时文件路径
      */
     public static String getTmpDirPath() {
-        //TODO
-        return null;
+        return System.getenv("temp");
     }
 
     /**
@@ -143,9 +144,7 @@ public final class FileUtil {
      * @return 用户路径
      */
     public static String getUserHomePath() {
-        //TODO
-        File file = Paths.get("").toFile();
-        return file.getAbsolutePath();
+        return System.getenv("HomePath");
     }
 
     /**
@@ -170,7 +169,25 @@ public final class FileUtil {
      * @return 如果存在匹配文件返回true
      */
     public static boolean exist(String directory, String regexp) {
-        //TODO
+        if(directory == null){
+            return false;
+        }
+        File dir = Paths.get(directory).toFile();
+        if(!dir.exists()){
+            return false;
+        }
+        Pattern patter = Pattern.compile(regexp,Pattern.CASE_INSENSITIVE);
+        try {
+            String[] str = dir.list();
+            for(String v:str){
+                Matcher matcher = patter.matcher(v);
+                if(matcher.matches()){
+                    return true;
+                }
+            }
+        }catch (NullPointerException e){
+            return false;
+        }
         return false;
     }
 
@@ -427,15 +444,11 @@ public final class FileUtil {
         }
         File destFile = null;
         if(isRetainExt){//保留扩展名
-            destFile = Paths.get(file.getParent(),newName).toFile();
-        }else{//不保留扩展名
             String[] fileNameArr = file.getName().split("\\.");
-            String newFileName = "";
-            for(int i = 0; i<fileNameArr.length-1; i++){
-                newFileName = newFileName+fileNameArr[i];
-            }
-            destFile = Paths.get(file.getParent().toString(),newFileName).toFile();
-            System.out.println(destFile.toString());
+            String newFileName = file.getParent()+newName+fileNameArr[fileNameArr.length-1];
+            destFile = Paths.get(newFileName).toFile();
+        }else{//不保留扩展名
+            destFile = Paths.get(file.getParent(),newName).toFile();
         }
 
         if(destFile.exists()){//目标文件已经存在
@@ -589,8 +602,14 @@ public final class FileUtil {
      * @throws IllegalArgumentException 检查创建的子文件不在父目录中抛出此异常
      */
     public static File checkSlip(File parentFile, File file) throws IllegalArgumentException {
-        //TODO
-        return null;
+        if(file == null || file == null){
+            return null;
+        }
+        if(parentFile.toString().equals(file.getParent())){
+            return file;
+        }else{
+            throw new IllegalArgumentException();
+        }
     }
 
     //判断当前系统是否为Windows
@@ -764,41 +783,34 @@ public final class FileUtil {
         System.out.println(file.toString()+"\ngetParent(file,7):"+getParent(file,7));
     }
 
+    // * 修改文件或目录的文件名，不变更路径，只是简单修改文件名<br>
+    public static void code23() throws Exception {
+        File file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(7)\\test - 副本.txt").toFile();
+        File destFile = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(7)\\test_new.txt").toFile();
+//        System.out.println(rename(file,"test_new.txt",false,false));
+        System.out.println(rename(destFile,"test-副本",false,false));
+    }
+
+    //获取用户路径（绝对路径）
+    public static void code24(){
+        System.out.println(getUserHomePath());
+    }
+
+    //获取临时文件路径（绝对路径）
+    public static void code25(){
+        System.out.println(getTmpDirPath());
+    }
+
+
     public static void main(String[] args) throws Exception {
-
-        //获取临时文件路径（绝对路径）
-
-        //获取用户路径（绝对路径）
-
 
 //        是否存在匹配文件
 //     @param directory 文件夹路径
 //     @param regexp    文件夹中所包含文件名的正则表达式
-
-        /**
-         * 修改文件或目录的文件名，不变更路径，只是简单修改文件名<br>
-         * 重命名有两种模式：<br>
-         * 1、isRetainExt为true时，保留原扩展名：
-         *
-         * <pre>
-         * FileUtil.rename(file, "aaa", true) xx/xx.png =》xx/aaa.png
-         * </pre>
-         * <p>
-         * 2、isRetainExt为false时，不保留原扩展名，需要在newName中
-         *
-         * <pre>
-         * FileUtil.rename(file, "aaa.jpg", false) xx/xx.png =》xx/aaa.jpg
-         * </pre>
-         *
-         * @param file        被修改的文件
-         * @param newName     新的文件名，包括扩展名
-         * @param isRetainExt 是否保留原文件的扩展名，如果保留，则newName不需要加扩展名
-         * @param isOverride  是否覆盖目标文件
-         * @return 目标文件
-         */
-        File file = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(7)\\test - 副本.txt").toFile();
-        File destFile = Paths.get("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(7)\\test_new.txt").toFile();
-        System.out.println(rename(file,"test_new.txt",false,false));
+        System.out.println(exist("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(7)",
+                "[a-z]{0,}[\\u0391-\\uFFE5]+[.]{1,}[txt]{1,}"));
+        System.out.println(exist("F:\\比特\\39班学习\\java\\java练习文件夹\\java练习文件夹(7)",
+                "[a-z]{0,}[.]{1,}[txt]{1,}"));
 
     }
 
