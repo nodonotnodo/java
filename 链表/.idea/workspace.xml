@@ -12,13 +12,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LinkList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LinkList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Linklist/LinkList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="106" selection-start-line="12" selection-start-column="106" selection-end-line="12" selection-end-column="106" />
+            <state relative-caret-position="266">
+              <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CircleLinkList.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CircleLink/CircleLinkList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="199" column="50" lean-forward="true" selection-start-line="199" selection-start-column="50" selection-end-line="199" selection-end-column="50" />
+              <folding>
+                <element signature="e#2847#2848#0" expanded="true" />
+                <element signature="e#2875#2876#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,6 +67,9 @@
         <option value="$PROJECT_DIR$/src/LinkList.java" />
         <option value="$PROJECT_DIR$/src/Interface/Operate.java" />
         <option value="$PROJECT_DIR$/src/Linklist/LinkList.java" />
+        <option value="$PROJECT_DIR$/src/CircleLink/Circle.java" />
+        <option value="$PROJECT_DIR$/src/CircleLink/CircleLink.java" />
+        <option value="$PROJECT_DIR$/src/CircleLink/CircleLinkList.java" />
       </list>
     </option>
   </component>
@@ -97,13 +113,7 @@
               <item name="链表" type="b2602c69:ProjectViewProjectNode" />
               <item name="链表" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Interface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="链表" type="b2602c69:ProjectViewProjectNode" />
-              <item name="链表" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Linklist" type="462c0819:PsiDirectoryNode" />
+              <item name="CircleLink" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="链表" type="b2602c69:ProjectViewProjectNode" />
@@ -142,7 +152,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LinkList (1)">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="LinkList (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Linklist.LinkList" />
       <module name="链表" />
@@ -158,6 +168,17 @@
       <option name="MAIN_CLASS_NAME" value="LinkList" />
       <module name="链表" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CircleLink.Test" />
+      <module name="链表" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CircleLink.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -203,9 +224,11 @@
     <list>
       <item itemvalue="Application.LinkList" />
       <item itemvalue="Application.LinkList (1)" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.LinkList (1)" />
         <item itemvalue="Application.LinkList" />
       </list>
@@ -230,11 +253,13 @@
       <workItem from="1543038923251" duration="3096000" />
       <workItem from="1543213853212" duration="7115000" />
       <workItem from="1543221168505" duration="746000" />
+      <workItem from="1543224833366" duration="23000" />
+      <workItem from="1544429518036" duration="5822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20165000" />
+    <option name="totallyTimeSpent" value="26010000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -247,7 +272,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32909605" />
@@ -260,9 +284,8 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.1822034" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27345845" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28150135" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -277,6 +300,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,10 +311,44 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Linklist/LinkList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interface/Operate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Linklist/LinkList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="106" selection-start-line="12" selection-start-column="106" selection-end-line="12" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interface/Operate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Linklist/LinkList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2299">
@@ -391,10 +449,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Linklist/LinkList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="106" selection-start-line="12" selection-start-column="106" selection-end-line="12" selection-end-column="106" />
+        <state relative-caret-position="266">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CircleLink/CircleLinkList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="199" column="50" lean-forward="true" selection-start-line="199" selection-start-column="50" selection-end-line="199" selection-end-column="50" />
+          <folding>
+            <element signature="e#2847#2848#0" expanded="true" />
+            <element signature="e#2875#2876#0" expanded="true" />
           </folding>
         </state>
       </provider>
