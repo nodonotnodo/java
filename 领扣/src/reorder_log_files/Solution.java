@@ -22,34 +22,26 @@ logs[i] 保证有一个标识符，并且标识符后面有一个字
 public class Solution {
 
     public static String[] reorderLogFiles(String[] logs) {
-        if(null == logs){
-            return null;
-        }
-        int num1 = 0;
-        int num2 = 0;
-        String[] logs1 = new String[logs.length];
-        String[] logs2 = new String[logs.length];
-        for(int i = 0; i<logs.length; i++){
-            if(num1+num2 == logs.length){
-                break;
-            }
-            char c = logs[i].charAt(logs[i].length()-1);
-            //如果是英文日志，那么将它放在英文字符的地方。
-            if(Character.isLetter(c)){
-                logs1[num1] = logs[i];
-                num1++;
+        String[] newString = new String[logs.length];
+        int flag1 = logs.length-1;
+        int flag2 = 0;
+        for(int i=logs.length-1; i>=0; i--){
+            String[] str = logs[i].split(" ");
+            if(Character.isDigit(str[1].charAt(0))){
+                newString[flag1] = logs[i];
+                flag1--;
             }else{
-                logs2[num2] = logs[i];
-                num2++;
+                newString[flag2] = logs[i];
+                flag2++;
             }
         }
-        for(int i = 0; i<num1-1; i++){
+        for(int i = 0; i<flag2-1; i++){
             int flag = 1;
-            for(int j = 0; j<num1-1-i; j++){
-                if(logs1[j].split(" ",2)[1].compareTo(logs1[j+1].split(" ",2)[1])>0){
-                    String tmp = logs1[j];
-                    logs1[j] = logs1[j+1];
-                    logs1[j+1] = tmp;
+            for(int j = 0; j<flag2-i-1; j++){
+                if(newString[j].split(" ",2)[1].compareTo(newString[j+1].split(" ",2)[1])>0){
+                    String tmp = newString[j];
+                    newString[j] = newString[j+1];
+                    newString[j+1] =tmp;
                     flag = 0;
                 }
             }
@@ -57,17 +49,11 @@ public class Solution {
                 break;
             }
         }
-        for(int i = 0; i<num1; i++){
-            logs[i] = logs1[i];
-        }
-        for(int i = num1;i<logs.length; i++){
-            logs[i] = logs2[i-num1];
-        }
-        return logs;
+        return newString;
     }
 
     public static void main(String[] args) {
         String[] logs = new String[]{"a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"};
-        reorderLogFiles(logs);
+        System.out.println(reorderLogFiles(logs));
     }
 }

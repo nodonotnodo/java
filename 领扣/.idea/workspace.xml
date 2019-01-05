@@ -12,29 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/linked_list_cycle_ii/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Solution.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/reorder_log_files/Solution.java">
+        <entry file="file://$PROJECT_DIR$/src/range_sum_of_bst/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reverse_linked_list/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1064">
-              <caret line="56" selection-start-line="56" selection-end-line="57" />
+            <state relative-caret-position="380">
+              <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -68,6 +50,8 @@
         <option value="$PROJECT_DIR$/src/reverse_linked_list/Solution.java" />
         <option value="$PROJECT_DIR$/src/linked_list_cycle_ii/Solution.java" />
         <option value="$PROJECT_DIR$/src/reorder_log_files/Solution.java" />
+        <option value="$PROJECT_DIR$/src/range-sum-of-bst/Solution.java" />
+        <option value="$PROJECT_DIR$/src/range_sum_of_bst/Solution.java" />
       </list>
     </option>
   </component>
@@ -77,10 +61,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -103,14 +87,27 @@
               <item name="领扣" type="b2602c69:ProjectViewProjectNode" />
               <item name="领扣" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="range_sum_of_bst" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="领扣" type="b2602c69:ProjectViewProjectNode" />
+              <item name="领扣" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="range_sum_of_bst" type="462c0819:PsiDirectoryNode" />
+              <item name="Solution.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="领扣" type="b2602c69:ProjectViewProjectNode" />
+              <item name="领扣" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reorder_log_files" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -133,7 +130,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Solution (2)">
+  <component name="RunManager" selected="Application.Solution (3)">
+    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution" />
+      <module name="领扣" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
     <configuration name="Solution (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="reorder_log_files.Solution" />
       <module name="领扣" />
@@ -146,23 +148,12 @@
       </extension>
     </configuration>
     <configuration name="Solution (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="happyNum.Solution" />
+      <option name="MAIN_CLASS_NAME" value="range_sum_of_bst.Solution" />
       <module name="领扣" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="happyNum.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="roman_to_integer.Solution" />
-      <module name="领扣" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="roman_to_integer.*" />
+          <option name="PATTERN" value="range_sum_of_bst.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -231,19 +222,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.Solution (3)" />
-      <item itemvalue="Application.Solution (4)" />
       <item itemvalue="Application.Solution (5)" />
       <item itemvalue="Application.Solution" />
       <item itemvalue="Application.Solution (2)" />
+      <item itemvalue="Application.Solution (1)" />
+      <item itemvalue="Application.Solution (3)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Solution (2)" />
-        <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.Solution (5)" />
-        <item itemvalue="Application.Solution (4)" />
         <item itemvalue="Application.Solution (3)" />
+        <item itemvalue="Application.Solution" />
+        <item itemvalue="Application.Solution (1)" />
+        <item itemvalue="Application.Solution (2)" />
+        <item itemvalue="Application.Solution (5)" />
       </list>
     </recent_temporary>
   </component>
@@ -269,15 +260,16 @@
       <workItem from="1544429421931" duration="90000" />
       <workItem from="1544438624803" duration="3051000" />
       <workItem from="1544607928583" duration="3344000" />
+      <workItem from="1546686019306" duration="513000" />
+      <workItem from="1546689987151" duration="481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42235000" />
+    <option name="totallyTimeSpent" value="43229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -290,7 +282,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19705094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20241287" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -317,7 +309,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <option name="time" value="35" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -340,6 +332,48 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/linked_list_cycle_ii/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reverse_linked_list/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1064">
+          <caret line="56" selection-start-line="56" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reorder_log_files/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="47" column="26" lean-forward="true" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/linked_list_cycle_ii/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reverse_linked_list/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1064">
+          <caret line="56" selection-start-line="56" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reorder_log_files/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1216">
+          <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/linked_list_cycle_ii/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1463">
@@ -558,13 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/linked_list_cycle_ii/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
@@ -575,7 +602,28 @@
     <entry file="file://$PROJECT_DIR$/src/reorder_log_files/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
-          <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/range-sum-of-bst/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/linked_list_cycle_ii/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/range_sum_of_bst/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
         </state>
       </provider>
     </entry>
