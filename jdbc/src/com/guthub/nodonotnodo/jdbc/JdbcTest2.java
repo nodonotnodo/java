@@ -1,10 +1,10 @@
-package com.guthub.nodonotnodo;
+package com.guthub.nodonotnodo.jdbc;
 
 import java.sql.*;
 
-//判断是否支持事务
+//实现自动关闭
 
-public class JdbcTest3 {
+public class JdbcTest2 {
 
     public static void main(String[] args) {
 
@@ -42,10 +42,6 @@ public class JdbcTest3 {
                         ,id,name,createdTime.toString(),modifyTime.toString())
                 );
             }
-            int i1 = statetment.executeUpdate("update memo_group set name='家庭2' where id=4");
-
-            //i2是一条异常语句，但是i1语句却成功更新了数据库数据，所以此时不支持事物（实际上是此时每执行一条语句都会自动提交commit）
-            int i2 = statetment.executeUpdate("insert into memo_group(id,name,created_time) values (7,'学习2',now(),8,2)");
         } catch (SQLException e) {
             e.printStackTrace();
         }

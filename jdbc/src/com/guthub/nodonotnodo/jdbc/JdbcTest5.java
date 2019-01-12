@@ -1,4 +1,4 @@
-package com.guthub.nodonotnodo;
+package com.guthub.nodonotnodo.jdbc;
 
 import java.sql.*;
 
