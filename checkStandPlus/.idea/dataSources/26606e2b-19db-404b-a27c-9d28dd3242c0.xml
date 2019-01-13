@@ -1092,7 +1092,7 @@
     <column id="273" parent="237" name="order_id">
       <Position>1</Position>
       <Comment>订单编号</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>

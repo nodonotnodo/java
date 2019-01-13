@@ -7,7 +7,11 @@ import java.util.*;
 //商品中心
 public class SimpleGoodsCenter implements GoodsCenter {
 
-    private Map<String,Goods> goodsMap = new HashMap<>();
+    private Map<String,Goods> goodsMap = new HashMap<>();//商品集合
+
+    public Map<String, Goods> getGoodsMap() {
+        return goodsMap;
+    }
 
     @Override
     public void addGoods(Goods good) {//添加商品
@@ -71,8 +75,15 @@ public class SimpleGoodsCenter implements GoodsCenter {
     public String listGoods() {//打印商品信息
         StringBuffer sb = new StringBuffer();
         sb.append("*****************商品信息*****************\n");
+        sb.append("good_id\t\tgood_name\tgood_price\n");
         for(Map.Entry<String, Goods> entry : goodsMap.entrySet()){
-            sb.append(entry.getValue().getId()+";"+entry.getValue().getName()+";"+entry.getValue().getPrice()+"\n");
+            sb.append("\t");
+            sb.append(entry.getValue().getId());
+            sb.append("\t\t\t");
+            sb.append(entry.getValue().getName());
+            sb.append("\t\t\t");
+            sb.append(entry.getValue().getPrice());
+            sb.append("\n");
         }
         sb.append("******************************************\n");
         return sb.toString();
@@ -92,6 +103,7 @@ public class SimpleGoodsCenter implements GoodsCenter {
         //sqlDelete命令会将数据库表中的所有数据清空。
         String sqlDelete = "delete from goods";
         jd.executeOrder(sqlDelete);
+        //开始将数据保存到数据库中
         for(Goods good: goodsMap.values()){
             //insert into checkstand values (goodId,goodName,goodPrice)
             String sql = String.format("insert into goods values (%s,'%s',%.2f)"
