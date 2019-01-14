@@ -109,7 +109,7 @@ public class CheckStand {
     //买单帮助菜单
     public static void oHelp(){
         StringBuffer help = new StringBuffer();
-        help.append("**********************欢迎设置商品**********************\n");
+        help.append("**********************欢迎进行买单**********************\n");
         help.append("      [A]添加商品      [D]取消商品     [L]浏览商品      \n");
         help.append("      [S]查看订单      [R]返回上级                      \n");
         help.append("       输入：A    D   L   S   R进行操作                 \n");
@@ -162,6 +162,9 @@ public class CheckStand {
                     break;
                 }
                 case "R":{
+                    if(order.getOrderInfo().size() != 0){
+                        simpleOrderCenters.addOrder(order);
+                    }
                     return;
                 }
                 default:{
@@ -183,6 +186,7 @@ public class CheckStand {
         SimpleGoodsCenter simpleGoodsCenter = new SimpleGoodsCenter();
         SimpleOrderCenter simpleOrderCenter = new SimpleOrderCenter();
         simpleGoodsCenter.load();
+        simpleOrderCenter.load();
         Scanner sc = new Scanner(System.in);
         while (true){
             help();

@@ -18,9 +18,7 @@ public class SimpleGoodsCenter implements GoodsCenter {
         if(good == null){
             return;
         }
-        if(goodsMap.containsKey(good.getId())){
-            return;
-        }else{
+        if(!goodsMap.containsKey(good.getId())){
             goodsMap.put(good.getId(),good);
         }
     }
@@ -32,8 +30,6 @@ public class SimpleGoodsCenter implements GoodsCenter {
         }
         if(goodsMap.containsKey(good.getId())){
             goodsMap.remove(good.getId());
-        }else{
-            return;
         }
     }
 
@@ -44,8 +40,6 @@ public class SimpleGoodsCenter implements GoodsCenter {
         }
         if(goodsMap.containsKey(good.getId())){
             goodsMap.replace(good.getId(),good);
-        }else{
-            return;
         }
     }
 

@@ -75,7 +75,7 @@ public abstract class JdbcMould {
             if(sql.substring(0,1).equalsIgnoreCase("s")){
                 resultSet = statement.executeQuery(sql);
             }else{
-                int result = statement.executeUpdate(sql);
+                this.result = statement.executeUpdate(sql);
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -21,10 +21,19 @@ public class SimpleOrderCenter implements OrderCenter {
         jd.createSql();
         //select max(order_id) from Orders
         String sql = "select max(order_id) from Orders";
+        int result = 0;
         jd.executeOrder(sql);
-        int result = jd.getResult();
-        jd.myCommit();
-        jd.colseAll();
+        try (        ResultSet resultSet = jd.getResultSet();
+        ){
+            if(resultSet.next()){
+                result = Integer.parseInt(resultSet.getNString("max(order_id)"));
+            }
+            jd.myCommit();
+            jd.colseAll();
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return result;
     }
 
@@ -167,6 +176,9 @@ public class SimpleOrderCenter implements OrderCenter {
     }
 
     public static void main(String[] args) {
-        test();
+//        test();
+        SimpleOrderCenter orderCenter = new SimpleOrderCenter();
+        orderCenter.load();
+        System.out.println(orderCenter.getMaxOrderId());
     }
 }
