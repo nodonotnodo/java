@@ -1,8 +1,15 @@
 package com.github.nodonotnodo;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class MyRunnable implements Runnable {
 
     private volatile boolean flag = true;
+
+    public volatile int ticket = 10;
+
+    private Lock ticketLock = new ReentrantLock();
 
     public void setFlag(boolean flag) {
         this.flag = flag;
@@ -80,16 +87,101 @@ public class MyRunnable implements Runnable {
 //        }
 
         /**
-         * 守护进程
+         * 守护进程示例
          */
-        int i = 0;
-        while(true){
-            System.out.println(Thread.currentThread().getName() + "的打印。。。" + i++);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+//        int i = 0;
+//        while(true){
+//            System.out.println(Thread.currentThread().getName() + "的打印。。。" + i++);
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+        /**
+         * 同步问题示例
+         */
+
+        //可以看到，这样导致了最终出现了一票多买以及票的浪费。
+        //这是因为有多个进程同时进行变量修改导致的冲突
+//        while(ticket > 0){
+//            ticket--;
+//            System.out.println("顾客" + Thread.currentThread().getName() + "买到了票，当前剩余票数。。。" + ticket);
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+
+        //同步代码块
+//        while(ticket > 0){
+//            synchronized (this){
+//                if(ticket > 0){
+//                    ticket--;
+//                    System.out.println("顾客" + Thread.currentThread().getName() + "买到了票，当前剩余票数。。。" + ticket);
+//                }
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+
+        //同步方法
+//        while (this.ticket > 0){
+//            this.sale();
+//            try {
+//                Thread.sleep(200);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+        /**
+         * 优先级示例
+         */
+//        MyRunnable myRunnable = new MyRunnable();
+//        Thread son = new Thread(myRunnable,"Thread-son");
+//        System.out.println(son.getName() + "的线程优先级为" + son.getPriority());
+
+        /**
+         * Lock示例
+         */
+        //将unlock()方法一定要放到finally块中，否则有可能锁死
+        //这种同步方式更加灵活，但是也需要更高的使用要求。
+        //在JDK1.6之后，synchronized关键字已经十分优化，建议使用synchronized
+        while (this.ticket > 0){
+            try{
+                this.ticketLock.lock();
+                if(this.ticket > 0){
+                    this.ticket--;
+                    System.out.println(Thread.currentThread().getName() + "买到了票，剩余票数。。。" + this.ticket);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }finally {
+                this.ticketLock.unlock();
             }
+        }
+    }
+
+    //同步方法
+    public synchronized void sale(){
+        if (this.ticket > 0) {
+            this.ticket--;
+            System.out.println("顾客" + Thread.currentThread().getName() + "买到了票，当前剩余票数。。。" + this.ticket);
+        }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
