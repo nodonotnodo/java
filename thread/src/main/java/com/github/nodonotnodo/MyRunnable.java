@@ -63,22 +63,33 @@ public class MyRunnable implements Runnable {
         /**
          * interrupted()方法只是会改变阻塞标志，所以我们可以将其与isInterrupted()方法组合使用达到我们想要的终止
          */
+//        int i = 0;
+//        while(true){
+//            try {
+//                if (Thread.currentThread().isInterrupted()) {
+//                    System.out.println(Thread.currentThread().getName() + "线程终止");
+//                    break;
+//                }
+//                System.out.println(Thread.currentThread().getName() + ": " + i++ + Thread.currentThread().isInterrupted());
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//                System.out.println(Thread.currentThread().isInterrupted());
+//                return;
+//            }
+//        }
+
+        /**
+         * 守护进程
+         */
         int i = 0;
         while(true){
+            System.out.println(Thread.currentThread().getName() + "的打印。。。" + i++);
             try {
-                if (Thread.currentThread().isInterrupted()) {
-                    System.out.println(Thread.currentThread().getName() + "线程终止");
-                    break;
-                }
-                System.out.println(Thread.currentThread().getName() + ": " + i++ + Thread.currentThread().isInterrupted());
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-                System.out.println(Thread.currentThread().isInterrupted());
-                return;
             }
-
-
         }
     }
 
