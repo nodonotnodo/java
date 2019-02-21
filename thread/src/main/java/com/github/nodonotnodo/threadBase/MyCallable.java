@@ -1,4 +1,4 @@
-package com.github.nodonotnodo;
+package com.github.nodonotnodo.threadBase;
 
 import java.util.concurrent.Callable;
 

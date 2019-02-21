@@ -1,4 +1,4 @@
-package com.github.nodonotnodo;
+package com.github.nodonotnodo.sync;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

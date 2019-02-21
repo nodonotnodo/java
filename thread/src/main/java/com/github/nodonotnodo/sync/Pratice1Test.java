@@ -1,4 +1,4 @@
-package com.github.nodonotnodo;
+package com.github.nodonotnodo.sync;
 
 public class Pratice1Test {
 

@@ -1,4 +1,4 @@
-package com.github.nodonotnodo;
+package com.github.nodonotnodo.threadBase;
 
 public class JoinTest {
 

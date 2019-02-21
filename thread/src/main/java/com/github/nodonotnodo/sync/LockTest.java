@@ -1,9 +1,10 @@
-package com.github.nodonotnodo;
+package com.github.nodonotnodo.sync;
 
-public class SyncTest {
+import com.github.nodonotnodo.threadBase.MyRunnable;
+
+public class LockTest {
 
     public static void main(String[] args) {
-
         MyRunnable buyTicket = new MyRunnable();
         Thread thread1 = new Thread(buyTicket,"李一");
         Thread thread2 = new Thread(buyTicket,"王二");
@@ -12,7 +13,6 @@ public class SyncTest {
         thread1.start();
         thread2.start();
         thread3.start();
-
     }
 
 }
