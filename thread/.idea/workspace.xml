@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b676e7f-207e-40f5-a8e1-1b50f8ce89ac" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/LockSuppor/LockSupportTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../checkStandPlus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../checkStandPlus/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../checkStandPlus/out/production/checkStandPlus/com/github/nodonotnodo/checkStand/CheckStand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../checkStandPlus/out/production/checkStandPlus/com/github/nodonotnodo/checkStand/CheckStand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../checkStandPlus/out/production/checkStandPlus/com/github/nodonotnodo/checkStand/SimpleGoodsCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../checkStandPlus/out/production/checkStandPlus/com/github/nodonotnodo/checkStand/SimpleGoodsCenter$1.class" afterDir="false" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="threadPool.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="threadPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadPool/threadPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="175" column="16" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
+            <state relative-caret-position="589">
+              <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
               <folding>
                 <element signature="e#2793#2794#0" expanded="true" />
                 <element signature="e#2888#2889#0" expanded="true" />
@@ -38,6 +39,15 @@
                 <element signature="e#4722#4723#0" expanded="true" />
                 <element signature="e#4816#4817#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WaitTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/modelPC/WaitTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-38">
+              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -54,8 +64,38 @@
       <file leaf-file-name="ExecutorService.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/ExecutorService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="290" column="33" selection-start-line="290" selection-start-column="33" selection-end-line="290" selection-end-column="33" />
+            <state relative-caret-position="304">
+              <caret line="136" column="45" selection-start-line="136" selection-start-column="45" selection-end-line="136" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Executor.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/Executor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractExecutorService.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/AbstractExecutorService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadPoolExecutor.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="1844" column="13" selection-start-line="1844" selection-start-column="7" selection-end-line="1844" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -69,56 +109,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractExecutorService.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/AbstractExecutorService.java">
+      <file leaf-file-name="NotifyTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/modelPC/NotifyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="130" column="25" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
+            <state relative-caret-position="133">
+              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunnableFuture.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/RunnableFuture.java">
+      <file leaf-file-name="LockSupportTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/LockSuppor/LockSupportTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Future.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/Future.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-878">
-              <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Executor.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/Executor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="139" column="9" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyCallable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadBase/MyCallable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyCallableTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadBase/MyCallableTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="369">
+              <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#962#963#0" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+                <element signature="e#1072#1073#0" expanded="true" />
+                <element signature="e#1122#1123#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,7 +146,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>start0()</find>
-      <find>Thread</find>
       <find>Thread()</find>
       <find>public Thread()</find>
       <find>public Thread(</find>
@@ -145,6 +155,7 @@
       <find>setName</find>
       <find>Integer(</find>
       <find>ThreadPoolExecutor(</find>
+      <find>Thread</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,6 +202,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadBase/MyRunnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadPool.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadPool/threadPool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/LockSuppor/LockSupportTest.java" />
       </list>
     </option>
   </component>
@@ -272,7 +284,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="github" type="462c0819:PsiDirectoryNode" />
               <item name="nodonotnodo" type="462c0819:PsiDirectoryNode" />
-              <item name="threadPool" type="462c0819:PsiDirectoryNode" />
+              <item name="LockSuppor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,7 +322,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.threadPool">
+  <component name="RunManager" selected="Application.LockSupportTest">
+    <configuration name="LockSupportTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.nodonotnodo.LockSuppor.LockSupportTest" />
+      <module name="thread" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.nodonotnodo.LockSuppor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.nodonotnodo.test.Test" />
       <module name="thread" />
@@ -329,17 +352,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.github.nodonotnodo.sync.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="TestPc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.nodonotnodo.modelPC.TestPc" />
-      <module name="thread" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.nodonotnodo.modelPC.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -408,19 +420,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.TestPc" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.Test (1)" />
       <item itemvalue="Application.YieldTest" />
       <item itemvalue="Application.threadPool" />
+      <item itemvalue="Application.LockSupportTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LockSupportTest" />
         <item itemvalue="Application.threadPool" />
         <item itemvalue="Application.YieldTest" />
         <item itemvalue="Application.Test (1)" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.TestPc" />
       </list>
     </recent_temporary>
   </component>
@@ -444,7 +456,7 @@
       <workItem from="1550753498768" duration="440000" />
       <workItem from="1550753956587" duration="627000" />
       <workItem from="1550757871764" duration="534000" />
-      <workItem from="1550812313427" duration="9402000" />
+      <workItem from="1550812313427" duration="12998000" />
     </task>
     <task id="LOCAL-00001" summary="多线程顺序打印信息">
       <created>1550579540621</created>
@@ -488,15 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1550742965530</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="java多线程之线程池">
+      <created>1550840726360</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1550840726360</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52477000" />
+    <option name="totallyTimeSpent" value="56073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -506,7 +524,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3281471" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33380482" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21715818" />
@@ -515,7 +533,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -536,21 +554,15 @@
     <MESSAGE value="java多线程" />
     <MESSAGE value="java多线程之生产者和消费者模型" />
     <MESSAGE value="java多线程之线程独立变量" />
-    <option name="LAST_COMMIT_MESSAGE" value="java多线程之线程独立变量" />
+    <MESSAGE value="java多线程之线程池" />
+    <option name="LAST_COMMIT_MESSAGE" value="java多线程之线程池" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadBase/StopThreadInterrupted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadBase/YieldTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -705,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/modelPC/WaitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -737,13 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="352" column="30" selection-start-line="352" selection-start-column="30" selection-end-line="352" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/modelPC/NotifyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -827,20 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="1189" column="4" selection-start-line="1189" selection-start-column="4" selection-end-line="1193" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/Executor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="139" column="9" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/RunnableFuture.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -855,13 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/AbstractExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="130" column="25" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadBase/MyCallable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -873,13 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/ExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="290" column="33" selection-start-line="290" selection-start-column="33" selection-end-line="290" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -899,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/threadPool/threadPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="175" column="16" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
+        <state relative-caret-position="589">
+          <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
           <folding>
             <element signature="e#2793#2794#0" expanded="true" />
             <element signature="e#2888#2889#0" expanded="true" />
@@ -908,6 +878,65 @@
             <element signature="e#3776#3777#0" expanded="true" />
             <element signature="e#4722#4723#0" expanded="true" />
             <element signature="e#4816#4817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/modelPC/WaitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/modelPC/NotifyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/ExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="136" column="45" selection-start-line="136" selection-start-column="45" selection-end-line="136" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/Executor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/AbstractExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="1844" column="13" selection-start-line="1844" selection-start-column="7" selection-end-line="1844" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/nodonotnodo/LockSuppor/LockSupportTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1072#1073#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
           </folding>
         </state>
       </provider>
