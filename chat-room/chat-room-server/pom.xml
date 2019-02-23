@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>chat-room-Socket</artifactId>
+    <artifactId>chat-room-server</artifactId>
 
-    <description>这是单线程聊天室的客户端工程</description>
+    <description>这是单线程聊天室的服务器工程</description>
 
     <!--打包配置-->
     <packaging>jar</packaging>
@@ -34,7 +34,7 @@
                             <addClasspath>true</addClasspath>
                             <useUniqueVersions>false</useUniqueVersions>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.github.nodonotnodo.socket.SocketUser</mainClass>
+                            <mainClass>com.github.nodonotnodo.socketserver.SingleChatroomSocketServer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

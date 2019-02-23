@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="chat-room-Socket" />
-        <module name="chat-room-SocketServer" />
+        <module name="chat-room-server" />
+        <module name="chat-room-socket" />
       </profile>
     </annotationProcessing>
   </component>

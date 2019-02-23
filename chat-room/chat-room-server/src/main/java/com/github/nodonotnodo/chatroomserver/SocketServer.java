@@ -1,4 +1,4 @@
-package com.github.nodonotnodo.socketserver;
+package com.github.nodonotnodo.chatroomserver;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class SingleChatroomSocketServer {
+public class SocketServer {
 
     public static void main(String[] args) {
 

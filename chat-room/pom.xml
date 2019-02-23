@@ -9,17 +9,19 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-        <module>chat-room-Server</module>
-        <module>chat-room-Socket</module>
+        <module>chat-room-server</module>
+        <module>chat-room-socket</module>
     </modules>
-    <description>这是单线程聊天室的父工程</description>
+
+    <description>这是chat-room的父工程</description>
 
     <!--配置项目属性-->
     <properties>
         <encoding>UTF-8</encoding>
         <java.version>1.8</java.version>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.complier.target>${java.version}</maven.complier.target>
+        <maven.complier.source>${java.version}</maven.complier.source>
     </properties>
+
 
 </project>

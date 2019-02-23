@@ -1,9 +1,7 @@
-package com.github.nodonotnodo.socket;
+package com.github.nodonotnodo.chatroomuser;
 
 import java.io.*;
-import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.SocketAddress;
 import java.util.Scanner;
 
 public class SocketUser {
@@ -12,12 +10,13 @@ public class SocketUser {
 
         //默认的IP地址和端口号
         String host = "127.0.0.1";
-        int port = 8889;
+        int port = 8888;
 
         try {
             //1.创建客户端连接服务器
 
             if(args.length > 1){
+                System.out.println(args[0].split("\\.").length);
                 if(args[0].split("\\.").length == 4){
                     host = args[0];
                 }else{
@@ -26,14 +25,8 @@ public class SocketUser {
                 port = Integer.valueOf(args[1]);
             }
 
-//            final Socket socket = new Socket(host,port);
-
-            //设置一个超时时长
-            Socket socket = new Socket();
-            SocketAddress address = new InetSocketAddress(host,port);
-            socket.connect(address,60000);
-
-            System.out.println("用户信息" + "\tIP地址：" + socket.getInetAddress() + "\t端口号：" + socket.getPort());
+            final Socket socket = new Socket(host,port);
+            System.out.println("用户信息" + "\tIP地址：" + socket.getInetAddress() + "\t端口号：" + socket.getLocalPort());
 
             Scanner interactive = new Scanner(System.in);//这个是为了给用户交互
 
