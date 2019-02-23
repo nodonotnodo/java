@@ -62,7 +62,7 @@ public class CheckStand {
 
     //商品更新
     public static void alterGood(final SimpleGoodsCenter simpleGoodsCenter,Scanner sc){
-        System.out.println("请输入要下架的商品信息：(如：1,铅笔,0.2)\n");
+        System.out.println("请输入要更新的商品信息：(如：1,铅笔,0.2)\n");
         String good = sc.next().replaceAll(" ","");
         String[] goods = good.split(",");
         if(goods.length == 3){
