@@ -1,4 +1,4 @@
-package com.github.nodonotnodo.chatroomuser;
+package com.github.nodonotnodo.chatroom.user.single;
 
 import java.io.*;
 import java.net.Socket;

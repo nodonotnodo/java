@@ -1,4 +1,4 @@
-package com.github.nodonotnodo.chatroomserver;
+package com.github.nodonotnodo.chatroom.server.single;
 
 import java.io.IOException;
 import java.io.InputStream;
