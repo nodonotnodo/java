@@ -13,6 +13,7 @@
         <module>chat-room-socket</module>
     </modules>
 
+
     <description>这是chat-room的父工程</description>
 
     <!--配置项目属性-->
