@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
@@ -47,9 +48,10 @@ public class ServerMultRunnable implements Runnable {
             signChose(scanner1);
 
             Scanner scanner = new Scanner(inputStream);
-            while(scanner.hasNext()){
+            while(true){
 
                 if(this.userModule == chatModule.DEFAULT){//主页
+
                     //用户提示信息
                     sendDataToUser("***************************************主页************************************");
                     sendDataToUser("****请输入您想要进行的操作：1.私聊——/——2.群聊——/——3.退出****");
@@ -66,24 +68,35 @@ public class ServerMultRunnable implements Runnable {
                         this.userModule = chatModule.PRIVATELY_CHAT;
                     }else if("2".equals(userData)){//群聊
                         this.userModule = chatModule.GROUP_CHAT;
-                    }else{//退出
-                        sendDataToUser("****成功退出****");
+                    }else if("3".equals(userData)){//退出
+                        sendDataToUser("****退出成功****");
                         try {
+                            onlineUserMap.remove(this.userName,this.userSocket);
+                            showOnlineUserNum();
                             this.userSocket.close();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                         return;
+                    }else{
+                        sendDataToUser("****输入信息的格式错误****");
                     }
                 }else if(this.userModule == chatModule.PRIVATELY_CHAT){//私聊
                     privatelyChat();
                 }else{//群聊
                     groupChat();
                 }
-
             }
+        } catch (SocketException e){
+            handleException();
         } catch (IOException e) {
             e.printStackTrace();
+            try {
+                this.userSocket.close();
+                showOnlineUserNum();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         }
 
     }
@@ -95,20 +108,28 @@ public class ServerMultRunnable implements Runnable {
             InputStream inputStream = this.userSocket.getInputStream();
             Scanner scanner = new Scanner(inputStream);
 
+            sendDataToUser("***************************群聊***\"退出\"退出群聊**************************");
+            sendDataToUser("*****输入你要发送的信息*******");
+
             while(scanner.hasNext()){
-                sendDataToUser("***************************群聊***\"退出\"退出群聊**************************");
-                sendDataToUser("*****输入你要发送的信息*******");
                 String userData = scanner.nextLine();
                 if("退出".equals(userData)){
+                    this.userModule = chatModule.DEFAULT;
                     return;
                 }
                 userData = this.userName + "的全服消息：" + userData;
                 for(Map.Entry<String,Socket> entry : onlineUserMap.entrySet()){
-                    sendDataToUser(userData,entry.getValue());
+                    Socket socket = entry.getValue();
+                    if(this.userSocket == socket)
+                    sendDataToUser(userData,socket);
                 }
+                sendDataToUser("***************************群聊***\"退出\"退出群聊**************************");
+                sendDataToUser("*****输入你要发送的信息*******");
             }
 
-        } catch (IOException e) {
+        }  catch (SocketException e){
+            handleException();
+        }  catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -137,15 +158,20 @@ public class ServerMultRunnable implements Runnable {
                         sendDataToUser("*********输入你要发送的信息************");
                         while(scanner.hasNext()){
                             sendDataToUser("*****************************\"私聊\"***\"退出\"退出私聊***********************");
-                            String userData = this.userName + scanner.nextLine();
+                            sendDataToUser("*********输入你要发送的信息************");
+                            String userData = scanner.nextLine();
                             if("退出".equals(userData)){
+                                this.userModule = chatModule.DEFAULT;
                                 return;
                             }
+                            userData = this.userName + ":" + userData;
                             sendDataToUser(userData,wantChatUser);
                         }
                     }
                 }
             }
+        } catch (SocketException e){
+            handleException();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -168,7 +194,7 @@ public class ServerMultRunnable implements Runnable {
                 sendDataToUser("*******请输入您想要注册的用户名和密码,例如：张三 jdascfs*******");
                 sendDataToUser("***********！！！注意：姓名和密码请控制在15个字符以内**********");
 
-                if(scanner.hasNext()){
+                while (scanner.hasNext()){
                     //去掉左右空格
                     String userDataSignIn = scanner.nextLine().trim();
 
@@ -179,32 +205,41 @@ public class ServerMultRunnable implements Runnable {
                         String userName = userDataSignIn.split(" ")[0];
                         String userPassword = userDataSignIn.split(" ")[1];
 
-                        if(userMap.size() < 1000){
-                            userMap.put(userName,userPassword);
-                            sendDataToUser("****注册成功****");
-                        }
-
-                        if(onlineUserMap.size() < 50){
-                            if(userMap.get(userName) != null){
-                                onlineUserMap.put(userName,this.userSocket);
-                                sendDataToUser("**********登录成功!!!************");
-                                return;
-                            }else{
-                                sendDataToUser("*******用户名或密码错误***********");
+                        if(userMap.get(userName) == null){
+                            if(userMap.size() < 1000){
+                                this.userName = userName;
+                                userMap.put(userName,userPassword);
+                                sendDataToUser("****注册成功****");
+                                if(onlineUserMap.size() < 50){
+                                    if(userMap.get(userName) != null){
+                                        onlineUserMap.put(userName,this.userSocket);
+                                        showOnlineUserNum();
+                                        sendDataToUser("**********登录成功!!!************");
+                                        return;
+                                    }else{
+                                        sendDataToUser("*******用户名或密码错误***********");
+                                    }
+                                }else{
+                                    sendDataToUser("**********当前登录人数过多，请稍后重试*************");
+                                    try {
+                                        sendDataToUser("请关机");
+                                        onlineUserMap.remove(this.userName,this.userSocket);
+                                        showOnlineUserNum();
+                                        this.userSocket.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
                             }
                         }else{
-                            sendDataToUser("**********当前登录人数过多，请稍后重试*************");
-                            try {
-                                this.userSocket.close();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                            sendDataToUser("用户名重复，请重新输入一个用户名");
                         }
                     }else{
                         sendDataToUser("***********输入信息格式错误**************");
+                        sendDataToUser("*******请输入您想要注册的用户名和密码,例如：张三 jdascfs*******");
+                        sendDataToUser("***********！！！注意：姓名和密码请控制在15个字符以内**********");
                     }
                 }
-                break;
             }else if("2".equals(userData)){//登录
                 signUP(scanner,onlineUserMap);
                 break;
@@ -215,22 +250,36 @@ public class ServerMultRunnable implements Runnable {
             }
         }
 
-
     }
 
     //登录
     private void signUP(Scanner scanner, ConcurrentHashMap<String,Socket> onlineUserMap) {
+        ConcurrentHashMap<String,String> userMap = MultChatroomServer.getUserMap();
         sendDataToUser("*******请输入您的用户名和密码,例如：张三 jdascfs*******");
         while(scanner.hasNext()){
             String userData = scanner.nextLine().trim();
             if(userData.split(" ").length == 2
                     && userData.split(" ")[0].length()<15
                     && userData.split(" ")[1].length()<15){
+                String name = userData.split(" ")[0];
+                String password = userData.split(" ")[1];
                 if(onlineUserMap.size() < 50){
-                    onlineUserMap.put(userData.split(" ")[0],this.userSocket);
-                    this.userName = userData.split(" ")[0];
-                    sendDataToUser("************登录成功**************");
-                    System.out.println("当前在线人数：" + MultChatroomServer.getOnlineUserMap().size());
+                    onlineUserMap.put(name,this.userSocket);
+                    this.userName = name;
+                    if(userMap.get(name) != null){
+                        String userPassword = userMap.get(name);
+                        if(password.equals(userPassword)){
+                            sendDataToUser("************登录成功**************");
+                            System.out.println("当前在线人数：" + MultChatroomServer.getOnlineUserMap().size());
+                            return;
+                        }else{
+                            sendDataToUser("******用户名或密码错误*******");
+                            sendDataToUser("******请重新输入******");
+                        }
+                    }else{
+                        sendDataToUser("******用户名或密码错误*******");
+                        sendDataToUser("******请重新输入******");
+                    }
                 }else{
                     sendDataToUser("******抱歉，当前在线用户过多，请稍后再试*******");
                     try {
@@ -264,7 +313,9 @@ public class ServerMultRunnable implements Runnable {
             data = data + "\n";
             outputStreamWriter.write(data);
             outputStreamWriter.flush();
-        } catch (IOException e) {
+        }  catch (SocketException e){
+            handleException();
+        }  catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -274,6 +325,19 @@ public class ServerMultRunnable implements Runnable {
 
         System.out.println("当前在线人数：" + MultChatroomServer.getOnlineUserMap().size());
 
+    }
+
+    //定义一套异常处理的方法
+    public void handleException(){
+        ConcurrentHashMap<String,Socket> onlineUserMap = MultChatroomServer.getOnlineUserMap();
+        System.out.println(this.userName + "用户退出");
+        onlineUserMap.remove(this.userName);
+        showOnlineUserNum();
+        try {
+            this.userSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

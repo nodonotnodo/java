@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class MultchatroomUser {
 
@@ -31,11 +32,16 @@ public class MultchatroomUser {
             while(true){
                 if(scanner.hasNext()){
                     String userData = scanner.nextLine();
-                    if("3".equals(userData)){
-                        return;
-                    }
                     outputStreamWriter.write(userData + "\n");
                     outputStreamWriter.flush();
+                    if("3".equals(userData)){
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        return;
+                    }
                 }
             }
 

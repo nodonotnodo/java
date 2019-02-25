@@ -1,2 +1,4 @@
-chat-room-server/target
-chat-room-socket/target
+chat-room-server/target/
+chat-room-socket/target/
+.idea/
+chat-room-server/chat-room-server.iml

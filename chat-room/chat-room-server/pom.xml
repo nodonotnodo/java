@@ -34,7 +34,7 @@
                             <addClasspath>true</addClasspath>
                             <useUniqueVersions>false</useUniqueVersions>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.github.nodonotnodo.socketserver.SingleChatroomSocketServer</mainClass>
+                            <mainClass>com.github.nodonotnodo.chatroom.server.mult.MultChatroomServer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

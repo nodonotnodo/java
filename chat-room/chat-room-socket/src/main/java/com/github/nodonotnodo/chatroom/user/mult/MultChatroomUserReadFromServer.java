@@ -20,7 +20,12 @@ public class MultChatroomUserReadFromServer implements Runnable {
         try {
             Scanner scanner = new Scanner(this.socket.getInputStream());
             while(scanner.hasNext()){
-                System.out.println(scanner.nextLine());
+                String serverData = scanner.nextLine();
+                if("请关机".equals(serverData)){
+                    System.out.println("你已经断开连接");
+                    return;
+                }
+                System.out.println(serverData);
             }
         } catch (IOException e) {
             e.printStackTrace();
