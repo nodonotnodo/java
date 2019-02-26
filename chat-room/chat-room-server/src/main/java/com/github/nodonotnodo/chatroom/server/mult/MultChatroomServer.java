@@ -1,8 +1,11 @@
 package com.github.nodonotnodo.chatroom.server.mult;
 
+import javax.xml.transform.Result;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.concurrent.*;
 
 public class MultChatroomServer {
@@ -22,6 +25,22 @@ public class MultChatroomServer {
     }
 
     public static void main(String[] args) {
+
+        //连接数据库
+        JdbcMysqlServer jdbcMysqlServer = new JdbcMysqlServer("root","1234") {
+            @Override
+            void dealResult() throws SQLException {
+                ResultSet resultSet = this.getResultSet();
+                while(resultSet.next()){
+                    String userName = resultSet.getNString("user_name");
+                    String userPassword = resultSet.getNString("user_password");
+                    userMap.put(userName,userPassword);
+                }
+            }
+        };
+        jdbcMysqlServer.runModel("select * from user_info;");
+
+
 
         //这是默认端口号
         int port = 8888;

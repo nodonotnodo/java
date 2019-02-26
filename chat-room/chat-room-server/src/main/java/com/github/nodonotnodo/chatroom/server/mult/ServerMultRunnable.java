@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.SocketException;
+import java.sql.SQLException;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
@@ -13,6 +14,19 @@ public class ServerMultRunnable implements Runnable {
 
     private String userName;
     private Socket userSocket;
+    private JdbcMysqlServer jdbcMysqlServer = new JdbcMysqlServer("root","1234") {
+        @Override
+        void dealResult() throws SQLException {
+            //这个对象是为了将信息添加到数据库上的
+            if(this.getResult() == 1){
+                System.out.println("用户信息上传成功");
+                this.setResult(-1);
+            }else{
+                this.myrollback();
+                System.out.println("添加的数据数量不为1，添加失败");
+            }
+        }
+    };
 
     //表示用户当前处于什么状态
     private enum chatModule {
@@ -209,6 +223,7 @@ public class ServerMultRunnable implements Runnable {
                             if(userMap.size() < 1000){
                                 this.userName = userName;
                                 userMap.put(userName,userPassword);
+                                upLoadToMySQL(userName,userPassword);
                                 sendDataToUser("****注册成功****");
                                 if(onlineUserMap.size() < 50){
                                     if(userMap.get(userName) != null){
@@ -250,6 +265,13 @@ public class ServerMultRunnable implements Runnable {
             }
         }
 
+    }
+
+    //将新注册的用户信息添加到数据库中
+    private void upLoadToMySQL(String userName, String userPassword) {
+        int userID = MultChatroomServer.getUserMap().size() + 1;
+        this.jdbcMysqlServer.runModel(
+                "insert into user_info (user_id,user_name, user_password) VALUES ('"+ userID + "','" + userName + "','" + userPassword + "');");
     }
 
     //登录
@@ -307,7 +329,7 @@ public class ServerMultRunnable implements Runnable {
         }
     }
 
-    private void sendDataToUser(String data, Socket socket){//发送用户想要私聊对象
+    private void sendDataToUser(String data, Socket socket){//给用户想要私聊的对象发送消息
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
             data = data + "\n";
