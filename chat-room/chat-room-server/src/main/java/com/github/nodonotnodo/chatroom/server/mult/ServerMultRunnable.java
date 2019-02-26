@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ServerMultRunnable implements Runnable {
 
+    private boolean isSocketException = false;
     private String userName;
     private Socket userSocket;
     private JdbcMysqlServer jdbcMysqlServer = new JdbcMysqlServer("root","1234") {
@@ -66,6 +67,10 @@ public class ServerMultRunnable implements Runnable {
 
                 if(this.userModule == chatModule.DEFAULT){//主页
 
+                    if(this.isSocketException) {
+                        return;
+                    }
+
                     //用户提示信息
                     sendDataToUser("***************************************主页************************************");
                     sendDataToUser("****请输入您想要进行的操作：1.私聊——/——2.群聊——/——3.退出****");
@@ -101,8 +106,6 @@ public class ServerMultRunnable implements Runnable {
                     groupChat();
                 }
             }
-        } catch (SocketException e){
-            handleException();
         } catch (IOException e) {
             e.printStackTrace();
             try {
@@ -141,8 +144,6 @@ public class ServerMultRunnable implements Runnable {
                 sendDataToUser("*****输入你要发送的信息*******");
             }
 
-        }  catch (SocketException e){
-            handleException();
         }  catch (IOException e) {
             e.printStackTrace();
         }
@@ -151,6 +152,9 @@ public class ServerMultRunnable implements Runnable {
     //私聊
     private void privatelyChat() {
         try {
+            if(this.isSocketException){
+                return;
+            }
             ConcurrentHashMap<String,String> userMap = MultChatroomServer.getUserMap();
             ConcurrentHashMap<String,Socket> onlineUserMap = MultChatroomServer.getOnlineUserMap();
             InputStream inputStream = this.userSocket.getInputStream();
@@ -184,8 +188,6 @@ public class ServerMultRunnable implements Runnable {
                     }
                 }
             }
-        } catch (SocketException e){
-            handleException();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -324,6 +326,8 @@ public class ServerMultRunnable implements Runnable {
             data = data + "\n";
             outputStreamWriter.write(data);
             outputStreamWriter.flush();
+        } catch (SocketException e){
+            handleException();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -350,11 +354,13 @@ public class ServerMultRunnable implements Runnable {
     }
 
     //定义一套异常处理的方法
-    public void handleException(){
+    private void handleException(){
         ConcurrentHashMap<String,Socket> onlineUserMap = MultChatroomServer.getOnlineUserMap();
         System.out.println(this.userName + "用户退出");
         onlineUserMap.remove(this.userName);
         showOnlineUserNum();
+        Thread.currentThread().stop();
+        this.isSocketException = true;
         try {
             this.userSocket.close();
         } catch (IOException e) {
