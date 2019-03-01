@@ -130,7 +130,7 @@ public abstract class JdbcMysqlServer {
     //  jdbc:databaseType://host:port/databaseName?p1=v1&p2=v2...(databaseName?后面的为用户自己设定的参数)
     private void createConnection(String user, String password) {
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/chat_room", user, password);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/chat_room?useSSL=false", user, password);
             connection.setAutoCommit(false);
             this.connection = connection;
         } catch (SQLException e) {

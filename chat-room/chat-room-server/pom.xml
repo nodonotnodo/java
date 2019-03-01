@@ -7,40 +7,97 @@
         <groupId>com.github.nodonotnodo</groupId>
         <version>1.0.0</version>
     </parent>
+
+    <!--项目坐标-->
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>chat-room-server</artifactId>
 
+    <!--项目描述-->
     <description>这是单线程聊天室的服务器工程</description>
 
-    <!--打包配置-->
+    <!--项目打包类型-->
     <packaging>jar</packaging>
+
+    <!--属性信息 [可选，但是一般都会配置一些]-->
+    <properties>
+        <!--配置编码-->
+        <encoding>UTF-8</encoding>
+        <!--配置JDK版本-->
+        <java.version>1.8</java.version>
+        <!--配置Maven内置属性 [可选，但可以覆盖]-->
+        <!--语法级别-->
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <!--编译级别-->
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <!--配置依赖jar包-->
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.46</version>
+        </dependency>
+    </dependencies>
+
+    <!--配置构建信息-->
     <build>
         <plugins>
+
+            <!--配置编译插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
+                <version>3.7.0</version>
             </plugin>
+
+            <!--复制依赖的jar到classpath-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.1</version>
+                <!--配置插件的执行目标-->
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>
+                            package
+                        </phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/lib
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--用来生成jar文件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
                 <configuration>
                     <archive>
+                        <!--在manifest中配置属性要注意大小写-->
                         <manifest>
-                            <addClasspath>true</addClasspath>
-                            <useUniqueVersions>false</useUniqueVersions>
-                            <classpathPrefix>lib/</classpathPrefix>
+                            <!--主类-->
                             <mainClass>com.github.nodonotnodo.chatroom.server.mult.MultChatroomServer</mainClass>
+
+                            <!--表示：将依赖的jar路径添加到classpath-->
+                            <addClasspath>true</addClasspath>
+
+                            <!--表示：依赖的jar在lib目录指定lib为classpath的前缀-->
+                            <classpathPrefix>lib</classpathPrefix>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 
 </project>
