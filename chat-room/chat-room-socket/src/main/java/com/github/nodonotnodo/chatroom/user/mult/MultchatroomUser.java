@@ -15,9 +15,8 @@ public class MultchatroomUser {
         int port = 8888;
 
         if (args != null) {
-            if (args.length == 1) {
-                port = Integer.valueOf(args[0]);
-            }
+            port = Integer.valueOf(args[1]);
+            adressIP = args[0];
         }
 
         try {

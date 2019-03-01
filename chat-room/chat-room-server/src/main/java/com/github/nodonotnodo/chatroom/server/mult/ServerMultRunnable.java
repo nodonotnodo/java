@@ -137,7 +137,7 @@ public class ServerMultRunnable implements Runnable {
                 userData = this.userName + "的全服消息：" + userData;
                 for(Map.Entry<String,Socket> entry : onlineUserMap.entrySet()){
                     Socket socket = entry.getValue();
-                    if(this.userSocket == socket)
+                    if(this.userSocket != socket)
                     sendDataToUser(userData,socket);
                 }
                 sendDataToUser("***************************群聊***\"退出\"退出群聊**************************");
