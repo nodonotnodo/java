@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85db44bb-7790-4545-8fc3-c16e61459ac5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/specificsorts/Soulution1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/java.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
@@ -12,6 +11,12 @@
       <change beforePath="$PROJECT_DIR$/../Tcheckstand/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tcheckstand/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Tcheckstand/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-room/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-room/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-room/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-room/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-room/chat-room-server/chat-room-server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chat-room/chat-room-server/src/main/java/com/github/nodonotnodo/chatroom/server/mult/MultChatroomServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chat-room/chat-room-server/src/main/java/com/github/nodonotnodo/chatroom/server/mult/MultChatroomServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../checkStandPlus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../checkStandPlus/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../file/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../file/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../file/src/com/github/nodonotnodo/coll_over/Achieve.java" beforeDir="false" afterPath="$PROJECT_DIR$/../file/src/com/github/nodonotnodo/coll_over/Achieve.java" afterDir="false" />
@@ -76,7 +81,6 @@
       <change beforePath="$PROJECT_DIR$/../收银台（动态）/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../收银台（动态）/.idea/收银台（动态）.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/领扣/prime_number_of_set_bits_in_binary_representation/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/领扣/prime_number_of_set_bits_in_binary_representation/Solution.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,36 +92,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Function1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/onlineTest/Function1.java">
+      <file leaf-file-name="Soulution1.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/specificsorts/Soulution1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="399">
+              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1187#1188#0" expanded="true" />
+                <element signature="e#1215#1216#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Function2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/onlineTest/Function2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#652#653#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -164,6 +147,7 @@
         <option value="$PROJECT_DIR$/src/onlineTest/Function1.java" />
         <option value="$PROJECT_DIR$/src/onlineTest/Function2.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/specificsorts/Soulution1.java" />
       </list>
     </option>
   </component>
@@ -184,7 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,17 +181,11 @@
               <item name="领扣" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="领扣" type="b2602c69:ProjectViewProjectNode" />
-              <item name="领扣" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="onlineTest" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -230,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Function2">
+  <component name="RunManager" selected="Application.Soulution1">
     <configuration name="Function1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="onlineTest.test3_6.Function1" />
       <module name="领扣" />
@@ -253,17 +231,6 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Solution (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="range_sum_of_bst.Solution" />
-      <module name="领扣" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="range_sum_of_bst.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="merge_k_sorted_lists.Solution" />
       <module name="领扣" />
@@ -282,6 +249,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="prime_number_of_set_bits_in_binary_representation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Soulution1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="specificsorts.Soulution1" />
+      <module name="领扣" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="specificsorts.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -328,19 +306,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.Solution (3)" />
       <item itemvalue="Application.Solution (4)" />
       <item itemvalue="Application.Solution (5)" />
       <item itemvalue="Application.Function1" />
       <item itemvalue="Application.Function2" />
+      <item itemvalue="Application.Soulution1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Soulution1" />
         <item itemvalue="Application.Function2" />
         <item itemvalue="Application.Function1" />
         <item itemvalue="Application.Solution (5)" />
         <item itemvalue="Application.Solution (4)" />
-        <item itemvalue="Application.Solution (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -374,7 +352,8 @@
       <workItem from="1547031327361" duration="1160000" />
       <workItem from="1551697762647" duration="3816000" />
       <workItem from="1551860608376" duration="2060000" />
-      <workItem from="1552399581298" duration="2408000" />
+      <workItem from="1552399581298" duration="2554000" />
+      <workItem from="1552671220195" duration="6322000" />
     </task>
     <task id="LOCAL-00001" summary="每日一题">
       <created>1552401847923</created>
@@ -383,34 +362,40 @@
       <option name="project" value="LOCAL" />
       <updated>1552401847923</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="git忽略文件">
+      <created>1552402094185</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552402094185</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57120000" />
+    <option name="totallyTimeSpent" value="63588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32909605" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3281471" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32909605" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3281471" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3281471" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13941018" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14142092" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.48022598" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47949082" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -431,15 +416,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="每日一题" />
-    <option name="LAST_COMMIT_MESSAGE" value="每日一题" />
+    <MESSAGE value="git忽略文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="git忽略文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="46" />
+      <option name="time" value="54" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>ints[0-6]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>stack[0]</expression-string>
         <language-id>JAVA</language-id>
@@ -769,9 +760,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/onlineTest/FrogMaze.java" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/onlineTest/Function2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/onlineTest/Function1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="274">
           <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -779,24 +784,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/git.ignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/onlineTest/Function2.java">
+    <entry file="file://$PROJECT_DIR$/src/specificsorts/Soulution1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="399">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding>
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
         </state>
       </provider>
     </entry>
