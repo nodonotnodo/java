@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85db44bb-7790-4545-8fc3-c16e61459ac5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/specificsorts/Soulution1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/单调栈结构_进阶/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/java.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
@@ -31,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/../jdbc/out/production/jdbc/com/guthub/nodonotnodo/JdbcTest4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../jdbc/out/production/jdbc/com/guthub/nodonotnodo/JdbcTest5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../jdbc/src/com/guthub/nodonotnodo/jdbc/JdbcMouldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbc/src/com/guthub/nodonotnodo/jdbc/JdbcMouldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../singleton/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../singleton/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../thread/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../thread/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../thread/target/classes/com/github/nodonotnodo/LockSuppor/LockSupportTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../thread/target/classes/com/github/nodonotnodo/LockSuppor/MyRunnable.class" beforeDir="false" />
@@ -80,6 +81,8 @@
       <change beforePath="$PROJECT_DIR$/../收银台（动态）/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../收银台（动态）/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../收银台（动态）/.idea/收银台（动态）.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../链表/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../链表/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../链表/src/Linklist/LinkList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../链表/src/Linklist/LinkList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -92,15 +95,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Soulution1.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/specificsorts/Soulution1.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/单调栈结构_进阶/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-              <folding>
-                <element signature="e#1187#1188#0" expanded="true" />
-                <element signature="e#1215#1216#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -148,6 +147,8 @@
         <option value="$PROJECT_DIR$/src/onlineTest/Function2.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/specificsorts/Soulution1.java" />
+        <option value="$PROJECT_DIR$/src/单调栈结构_进阶/Solution.java" />
+        <option value="$PROJECT_DIR$/src/单调栈结构_进阶/Main.java" />
       </list>
     </option>
   </component>
@@ -208,7 +209,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Soulution1">
+  <component name="RunManager" selected="Application.Solution">
     <configuration name="Function1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="onlineTest.test3_6.Function1" />
       <module name="领扣" />
@@ -231,17 +232,6 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="merge_k_sorted_lists.Solution" />
-      <module name="领扣" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="merge_k_sorted_lists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="Solution (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="prime_number_of_set_bits_in_binary_representation.Solution" />
       <module name="领扣" />
@@ -249,6 +239,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="prime_number_of_set_bits_in_binary_representation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="单调栈结构_进阶.Solution" />
+      <module name="领扣" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="单调栈结构_进阶.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -306,19 +307,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.Solution (4)" />
       <item itemvalue="Application.Solution (5)" />
       <item itemvalue="Application.Function1" />
       <item itemvalue="Application.Function2" />
       <item itemvalue="Application.Soulution1" />
+      <item itemvalue="Application.Solution" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Soulution1" />
         <item itemvalue="Application.Function2" />
         <item itemvalue="Application.Function1" />
         <item itemvalue="Application.Solution (5)" />
-        <item itemvalue="Application.Solution (4)" />
       </list>
     </recent_temporary>
   </component>
@@ -353,7 +354,8 @@
       <workItem from="1551697762647" duration="3816000" />
       <workItem from="1551860608376" duration="2060000" />
       <workItem from="1552399581298" duration="2554000" />
-      <workItem from="1552671220195" duration="6322000" />
+      <workItem from="1552671220195" duration="6420000" />
+      <workItem from="1567495482491" duration="2688000" />
     </task>
     <task id="LOCAL-00001" summary="每日一题">
       <created>1552401847923</created>
@@ -369,14 +371,22 @@
       <option name="project" value="LOCAL" />
       <updated>1552402094185</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="特殊排序">
+      <created>1552700436999</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1552700436999</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63588000" />
+    <option name="totallyTimeSpent" value="66374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -389,7 +399,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3281471" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14142092" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14343163" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -417,11 +427,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="每日一题" />
     <MESSAGE value="git忽略文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="git忽略文件" />
+    <MESSAGE value="特殊排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="特殊排序" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="54" />
+      <option name="time" value="56" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -449,13 +460,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/linked_list_cycle_ii/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reverse_linked_list/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1064">
@@ -660,13 +664,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test1.java" />
-    <entry file="file://$PROJECT_DIR$/src/to_lower_case/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34998">
@@ -681,31 +678,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wildcard_matching/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/happyNum/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/roman_to_integer/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="84" column="18" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reverse_linked_list/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="56" selection-start-line="56" selection-end-line="57" />
         </state>
       </provider>
     </entry>
@@ -774,24 +750,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/specificsorts/Soulution1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/happyNum/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reverse_linked_list/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/to_lower_case/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/onlineTest/Function1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="361">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/specificsorts/Soulution1.java">
+    <entry file="file://$PROJECT_DIR$/src/wildcard_matching/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding>
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1165">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/单调栈结构_进阶/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
